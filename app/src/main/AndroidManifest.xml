@@ -41,6 +41,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dotzenrod.notekeeper.MainActivity"/>
         </activity>
+
+        <provider
+            android:name=".NoteKeeperProvider"
+            android:authorities="com.dotzenrod.notekeeper.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
     </application>
 
 </manifest>
