@@ -27,6 +27,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -45,6 +46,11 @@
             android:enabled="true"
             android:exported="true">
         </provider>
+
+        <service
+            android:name=".NoteBackupService"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>

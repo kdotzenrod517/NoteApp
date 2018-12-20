@@ -57,6 +57,9 @@ public class NoteReminderNotification {
         final Resources res = context.getResources();
         final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.outline_notes_black_18dp);
 
+        Intent backupServiceIntent = new Intent (context, NoteBackupService.class);
+        backupServiceIntent.putExtra(NoteBackupService.EXTRA_COURSE_ID, NoteBackup.ALL_COURSES);
+
         NotificationManager mNotificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -94,6 +97,13 @@ public class NoteReminderNotification {
                                     context,
                                     0,
                                     new Intent(context, MainActivity.class),
+                                    PendingIntent.FLAG_UPDATE_CURRENT))
+                    .addAction(0,
+                            "Backup notes",
+                            PendingIntent.getService(
+                                    context,
+                                    0,
+                                    backupServiceIntent,
                                     PendingIntent.FLAG_UPDATE_CURRENT))
                     .setAutoCancel(true);
 
