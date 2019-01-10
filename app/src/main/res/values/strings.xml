@@ -2,6 +2,7 @@
     <string name="app_name">Note Keeper</string>
     <string name="action_settings">Settings</string>
     <string name="backup_notes">Backup Notes</string>
+    <string name="upload_notes">Upload Notes</string>
     <string name="title_activity_note">Edit/Create Note</string>
     <string name="title_activity_main">NoteKeeper</string>
 
